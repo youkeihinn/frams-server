@@ -1,0 +1,47 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/registerUser/registerUser_edit.js"]}){
+<form id="registerUserForm" lay-filter="registerUserForm" class="layui-form model-form">
+    <input name="id" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="userName" name="userName" placeholder="请输入用户名" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="name" name="name" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+       <div class="layui-form-item">
+        <label class="layui-form-label">门牌号<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="no" name="no" placeholder="请输入门牌号" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+       <div class="layui-form-item">
+        <label class="layui-form-label">地址<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="adrress" name="adrress" placeholder="请输入地址" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+       <div class="layui-form-item">
+        <label class="layui-form-label">联系方式<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="tel" name="tel" placeholder="请输入联系方式" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="userPass" name="userPass" placeholder="请输入密码" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+ 
+   
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

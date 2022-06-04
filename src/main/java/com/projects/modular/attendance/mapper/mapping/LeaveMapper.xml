@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projects.modular.attendance.mapper.LeaveMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.projects.modular.attendance.entity.Leave">
+        <id column="leave_id" property="leaveId" />
+        <result column="user_id" property="userId" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="mark" property="mark" />
+        <result column="status" property="status" />
+        <result column="reason" property="reason" />
+        <result column="type" property="type" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        leave_id AS "leaveId", user_id AS "userId", start_time AS "startTime", end_time AS "endTime", mark AS "mark", status AS "status", reason AS "reason", type AS "type"
+    </sql>
+
+</mapper>

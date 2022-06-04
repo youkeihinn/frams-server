@@ -1,0 +1,44 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/leave/leave_edit.js"]}){
+<form id="leaveForm" lay-filter="leaveForm" class="layui-form model-form">
+    <input name="leaveId" type="hidden"/>
+   
+    <div class="layui-form-item">
+        <label class="layui-form-label">开始时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="startTime" name="startTime" placeholder="请输入开始时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">结束时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="endTime" name="endTime" placeholder="请输入结束时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+   
+  <div class="layui-form-item">
+        <label class="layui-form-label">类型<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <select name="type" lay-verify="required" lay-search="">
+          <option value="">选择类型</option>
+          <option value="缺勤">缺勤</option>
+          <option value="出差">出差</option>
+          <option value="休假">休假</option>
+           <option value="加班">加班</option>     
+        </select>
+          
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">事由<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+          <textarea id="reason" name="reason"  placeholder="请输入事由" class="layui-textarea"></textarea>
+         
+        </div>
+    </div>
+   
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

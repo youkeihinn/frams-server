@@ -1,0 +1,100 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/system/user/user_add.js"]}){
+<form id="userForm" lay-filter="userForm" class="layui-form model-form">
+    <input name="userId" type="hidden"/>
+     <input name="roleId" value="1347086058208694273"   type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">账号<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="account" placeholder="请输入账号" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">姓名<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="name" placeholder="请输入姓名" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">工号<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="email" placeholder="请输入工号" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+  
+    <div class="layui-form-item">
+        <label class="layui-form-label">出生日期</label>
+        <div class="layui-input-block">
+            <input id="birthday" name="birthday" placeholder="请输入生日" type="text" class="layui-input" autocomplete="off"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="password" placeholder="请输入密码" type="password" class="layui-input" lay-verify="required|psw" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">重复密码<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="rePassword" placeholder="请输入重复密码" type="password" class="layui-input" lay-verify="required|repsw" required/>
+        </div>
+    </div>
+   
+    <div class="layui-form-item">
+        <label class="layui-form-label">性别</label>
+        <div class="layui-input-block">
+            <input type="radio" name="sex" value="M" title="男" checked/>
+            <input type="radio" name="sex" value="F" title="女"/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">部门</label>
+        <div class="layui-input-block">
+              <select id="deptId" name="deptId"  lay-search="">
+        
+         
+        		</select>
+        </div>
+    </div>
+   
+    <div class="layui-form-item">
+        <label class="layui-form-label">电话</label>
+        <div class="layui-input-block">
+            <input name="phone" placeholder="请输入电话" type="text" class="layui-input"/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+<script type="text/javascript" src="${ctxPath}/assets/common/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="${ctxPath}/assets/common/js/jsrender.js"></script>
+<script id="dataList3" type="text/x-jsrender">
+<option value="">请选择部门</option>
+{{for data}}
+   <option value="{{:deptId}}">{{:name}}</option>    
+{{/for}} 
+</script>
+
+<script type="text/javascript">
+
+function getList(){
+	 var $ax = layui.ax;	
+	 var ajax = new $ax(Feng.ctxPath + "/dept/getList", function (data) {
+		 $("#deptId").html("");							
+			var html = $("#dataList3").render(data);						
+			$("#deptId").html(html);	
+			 var form = layui.form;
+			    form.render();
+}, function (data) {
+    Feng.error("" + data.responseJSON.message)
+});
+
+ajax.start();
+}
+
+
+
+</script>
+@}

@@ -1,0 +1,38 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/attendTime/attendTime_add.js"]}){
+<form id="attendTimeForm" lay-filter="attendTimeForm" class="layui-form model-form">
+    <input name="time" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">开始时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="startTime" name="startTime" placeholder="请输入开始时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">结束时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="endTime" name="endTime" placeholder="请输入结束时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">打卡地点<span style="color: red;"></span></label>
+        <div class="layui-input-block">
+         <input id="address" name="address" placeholder="请输入打卡地点" type="text" class="layui-input" lay-verify="required" required/>
+           </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">打卡说明<span style="color: red;"></span></label>
+        <div class="layui-input-block">
+           <input id="mark" name="mark" placeholder="请输入打卡说明" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label"><span style="color: red;"></span></label>
+        <div class="layui-input-block">
+                 </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

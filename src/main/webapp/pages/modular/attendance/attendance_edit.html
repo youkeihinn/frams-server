@@ -1,0 +1,27 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/attendance/attendance_edit.js"]}){
+<form id="attendanceForm" lay-filter="attendanceForm" class="layui-form model-form">
+    <input name="attendId" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">考勤员工<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="userId" name="userId" placeholder="请输入考勤员工" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">考勤时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="time" name="time" placeholder="请输入考勤时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">考勤类型<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="type" name="type" placeholder="请输入考勤类型" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

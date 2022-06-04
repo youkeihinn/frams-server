@@ -6,3 +6,7 @@ Face Recognition Attendance Management System
 服务端
 
 管理后台
+
+开发环境
+java1.8
+mysql5.7

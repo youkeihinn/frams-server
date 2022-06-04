@@ -1,0 +1,31 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/leave/leave_edit.js"]}){
+<form id="leaveForm" lay-filter="leaveForm" class="layui-form model-form">
+    <input name="leaveId" type="hidden"/>
+   
+   
+  <div class="layui-form-item">
+        <label class="layui-form-label">审批类型<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <select name="status" lay-verify="required" lay-search="">
+          <option value="">选择审批类型</option>
+          <option value="1">同意</option>
+          <option value="2">拒绝</option>
+          
+        </select>
+          
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">审批回复<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+          <textarea id="mark" name="mark"  placeholder="请输入审批回复" class="layui-textarea"></textarea>
+         
+        </div>
+    </div>
+   
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

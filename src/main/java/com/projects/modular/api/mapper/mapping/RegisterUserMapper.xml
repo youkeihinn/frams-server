@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.projects.modular.api.mapper.RegisterUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.projects.modular.api.entity.RegisterUser">
+        <id column="id" property="id" />
+        <result column="userName" property="userName" />
+        <result column="userPass" property="userPass" />
+        <result column="name" property="name" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS "id", userName AS "userName", userPass AS "userPass", name AS "name", create_time AS "createTime"
+    </sql>
+
+</mapper>
